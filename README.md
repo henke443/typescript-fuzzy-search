@@ -3,6 +3,7 @@ A simple typescript function I spent way too much time on
 
 # Tests/examples
 
+```typescript
 let res: string | null = ""
 
 const allLanguages = ["af", "sq", "ar-SA", "ar-IQ", "ar-EG", "ar-LY", "ar-DZ", "ar-MA", "ar-TN", "ar-OM",
@@ -89,6 +90,7 @@ console.timeEnd("fuzzy");
 
 
 console.time("fuzzy exhaustive");
+```
 for (var i = 0; i < 10e2; i++) {
   test((haystack: string[], needle: string) => fuzzyStringSearch(haystack, needle, false, true))
 }
