@@ -5,7 +5,7 @@ It searches for a string in a string array but fuzzily.
 ## Fuzzy
 ```
 // Basic functionality with long sentences
-let testCase7 = ["I love to watch movies.", "I enjoy playing football.", "Cooking is my favorite pastime.", "I like to read books."];
+let testCase7 = ["I love to watch movies.", "I like to read books.", "I enjoy playing football."];
 res = fuzzyStringSearch(testCase7, "I love reading books.");
 console.assert(res === "I like to read books."); // Expected: true
 ```
