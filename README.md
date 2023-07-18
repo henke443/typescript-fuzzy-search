@@ -21,7 +21,7 @@ const allLanguages = ["af", "sq", "ar-SA", "ar-IQ", "ar-EG", "ar-LY", "ar-DZ", "
 
 
 const test = (fuzzyStringSearch: Function) => {
-// Test Case 1: Basic functionality
+// Basic functionality
 let testCase1 = ["apple", "banana", "orange", "pineapple"];
 res = fuzzyStringSearch(testCase1, "apple");
 console.assert(res === "apple", res); // Expected: true
