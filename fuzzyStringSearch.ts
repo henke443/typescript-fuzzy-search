@@ -1,4 +1,4 @@
-  /**
+/**
  * Function to find the closest match to a string (needle) in a list of strings (haystack).
  *
  * This function calculates a score for each string in the haystack, according to how closely
@@ -8,10 +8,16 @@
  * @param haystack The list of strings to search through. Must be a string array otherwise null is returned.
  * @param needle The string to find a match for. Must be a string otherwise null is returned.
  * @param caseSensitive (optional) Whether or not the search should be case sensitive. Defaults to false.
- * @param exhaustive (optional) Whether or not the search should exhaustively calculate score for each string. It improves accuracy but reduces performance. Defaults to false.
+ * @param exhaustive (optional) Whether or not the search should exhaustively calculate score for each string. It improves accuracy but reduces performance *slightly*. Defaults to true.
+ *
+ * ```
+ * fuzzy: 3615.18994140625 ms
+ * fuzzy exhaustive: 4576.52880859375 ms
+ * ```
+ *
  * @returns The best match from the haystack or null if inputs are invalid.
  */ 
-function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=false, exhaustive=false): string | null {
+function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=false, exhaustive=true): string | null {
   // Verification of input types
   if (typeof needle !== "string" || !Array.isArray(haystack) || !haystack.every(e => typeof e === "string")) {
     return null;
