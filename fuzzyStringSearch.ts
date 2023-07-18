@@ -45,7 +45,7 @@ function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=fal
       for (let i = 0, n = -1; window = needle.slice(i, step); i++) {
         const old_n = n
         n = hay.indexOf(window, n + 1);
-        // Score is increased by step if match is found, decreased by 1 if not
+
         if (n >= 0) {
           // the difference between the expected location and real location that 
           // decreases based on how far from the start of the hay string it is.
