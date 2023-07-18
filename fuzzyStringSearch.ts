@@ -34,9 +34,6 @@ function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=fal
     }
 
    
-    // Locale specific fix that prioritizes language
-    //if (isLocale && hay.startsWith(needle.split("-")[0] + "-")) score += 1000;
-
     // Iterate over the needle string, reducing its size with every iteration
     for (;step > min; step--) {
       for (let i = 0, n = -1; window = needle.slice(i, step); i++) {
@@ -44,8 +41,12 @@ function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=fal
         n = hay.indexOf(window, n + 1);
         // Score is increased by step if match is found, decreased by 1 if not
         if (n >= 0) {
-          score += (old_n-n)/(i+1)
+          // the difference between the expected location and real location that 
+          // decreases based on how far from the start of the hay string it is.
+          score += (old_n-n)/(i+1) 
         } else {
+          // it's better if we find what we're looking for at an earlier step so the score
+          // decreases more in the beginning steps (step starts at length of needle string)
           score -= step
         }
         if (score > 0) {
