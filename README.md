@@ -26,50 +26,50 @@ let testCase1 = ["apple", "banana", "orange", "pineapple"];
 res = fuzzyStringSearch(testCase1, "apple");
 console.assert(res === "apple", res); // Expected: true
 
-// Test Case 2: Order of letters doesn't matter
+// Order of letters doesn't matter
 let testCase2 = ["sv", "sx", "sv-FI", "es-SV"];
 res = fuzzyStringSearch(testCase2, "sv-SE");
 console.assert(res === "sv-FI", res, "=== sv-FI"); // Expected: true
 
-// Test Case 3: Non-case sensitive match
+// Non-case sensitive match
 let testCase3 = ["Dog", "Cat", "Bird", "Fish"];
 res = fuzzyStringSearch(testCase3, "dog");
 console.assert(res === "Dog", res); // Expected: true
 
-// Test Case 5: Exhaustive search - More accurate match even with additional letters
+// Exhaustive search - More accurate match even with additional letters
 let testCase_5 = ["ABCD", "BCDA", "CDAB", "DABC"];
 res = fuzzyStringSearch(testCase_5, "AB");
 console.assert(res === "ABCD", res, " === ABCD"); // Expected: true
 
-// Test Case 6 - Prioritize better and shorter strings
+//  Prioritize better and shorter strings
 let testCase6 = ["ABCD", "B", "AB", "BCDA", "CDAB", "DABC"];
 res = fuzzyStringSearch(testCase6, "AB");
 console.assert(res === "AB", res, "=== AB"); // Expected: true
 
-// Negative Test Case 1: Invalid inputs - haystack is not an array
+// Invalid inputs - haystack is not an array
 res = fuzzyStringSearch("hello", "h");
 console.assert(res === null, res, " === null"); // Expected: true
 
-// Negative Test Case 2: Invalid inputs - needle is not a string
+// Invalid inputs - needle is not a string
 res = fuzzyStringSearch(["h"], true);
 console.assert(res === null, res, ); // Expected: true
 
-// Test Case 1: Basic functionality with long sentences
+// Basic functionality with long sentences
 let testCase7 = ["I love to watch movies.", "I enjoy playing football.", "Cooking is my favorite pastime.", "I like to read books."];
 res = fuzzyStringSearch(testCase7, "I love reading books.");
 console.assert(res === "I like to read books.", res, "I like to read books."); // Expected: true
 
-// Test Case 2: Case-insensitive match in sentences
+// Case-insensitive match in sentences
 let testCase8 = ["Don't cry because it's over, smile because it happened.", "In three words I can sum up everything I've learned about life: it goes on."];
 res = fuzzyStringSearch(testCase8, "don't CRY because it's OVER, SMILE because it happened.");
 console.assert(res === "Don't cry because it's over, smile because it happened.", res); // Expected: true
 
-// Test Case 3: Test with special characters in the haystack and needle
+// Test with special characters in the haystack and needle
 let testCase9 = ["return -2*root;", "console.log(delta)", "function solve(){ }", "{ key: value }"]
 res = fuzzyStringSearch(testCase9, "return (delta >= 0) ? -2*root : console.log(delta);");
 console.assert(res === "console.log(delta)", "console.log(delta) ===", res); // Expected: true
 
-// Test Case 4: Test with more than one possible matches, with and without exhaustive search
+// Test with more than one possible matches, with and without exhaustive search
 let testCase10 = [
   "A If you don't know where you're going, any road'll take you there", 
   "B If you don't know where you want to go, then it doesn't matter which path you take."];
