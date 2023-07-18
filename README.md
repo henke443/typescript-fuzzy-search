@@ -1,6 +1,6 @@
 # typescript-fuzzy-search
 A simple typescript function I spent way too much time on.
-It searches for a string in a string array but allows it to be a very bad match.
+It searches for a string in a string array but fuzzily.
 
 ## Fuzzy
 ```
