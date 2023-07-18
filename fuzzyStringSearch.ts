@@ -75,8 +75,6 @@ function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=fal
     return acc;
   }, {});
 
-  //console.log(scores)
-
   const bestMatch = haystack.reduce((prev, curr) => {
     let _prev = caseSensitive ? prev : prev.toLowerCase();
     let _curr = caseSensitive ? curr : curr.toLowerCase();
