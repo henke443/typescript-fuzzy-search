@@ -51,8 +51,8 @@ function fuzzyStringSearch(haystack: string[], needle: string, caseSensitive=fal
           // decreases based on how far from the start of the hay string it is.
           score += (old_n-n)/(i+1) 
         } else {
-          // it's better if we find what we're looking for at an earlier step so the score
-          // decreases more when we don't find something in the beginning steps (step starts at length of needle string)
+          // it's better if we find what we're looking for at an earlier step 
+          // so the score decreases more based on that
           score -= step
         }
         if (score > 0) {
