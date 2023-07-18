@@ -90,8 +90,9 @@ console.timeEnd("fuzzy");
 
 
 console.time("fuzzy exhaustive");
-```
 for (var i = 0; i < 10e2; i++) {
   test((haystack: string[], needle: string) => fuzzyStringSearch(haystack, needle, false, true))
 }
 console.timeEnd("fuzzy exhaustive");
+
+```
